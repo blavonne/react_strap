@@ -9,8 +9,8 @@ class App extends Component {
 		super(props)
 		this.state = {
 			apps: [
-				{id: 1, name: "Application1", active: true, content: "/Application1"},
-				{id: 2, name: "Application2", active: false, content: "/Application2"},
+				{id: 1, name: "Application1", active: true, content: "/Application1/"},
+				{id: 2, name: "Application2", active: false, content: "/Application2/"},
 				{id: 3, name: "Application3", active: false, content: "/Application3/"},
 				{id: 4, name: "Application4", active: false, content: "/Application4/"},
 				{id: 5, name: "Application5", active: false, content: "/Application5/"},
