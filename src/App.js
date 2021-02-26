@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import NavBar from "./components/NavBar/NavBar";
 import './App.css';
-import {Home, About} from "./components/Content/Content";
-import {Switch, Route} from 'react-router-dom'
+import * as Apps from "./components/Content/AppsContent";
+import {Switch, Route} from 'react-router-dom';
 
 class App extends Component {
 	constructor(props) {
@@ -48,9 +48,14 @@ class App extends Component {
 				{this.renderNav()}
 				<div className="Content">
 					<Switch>
-						<Route exact path='/' component={Home}/>
-						<Route path='/Application2' component={About}/>
-						<Route path='/Application1' component={Home}/>
+						<Route exact path='/' component={Apps.App1}/>
+						<Route path='/Application1' component={Apps.App1}/>
+						<Route path='/Application2' component={Apps.App2}/>
+						<Route path='/Application3' component={Apps.App3}/>
+						<Route path='/Application4' component={Apps.App4}/>
+						<Route path='/Application5' component={Apps.App5}/>
+						<Route path='/Application6' component={Apps.App6}/>
+						<Route path='/Application7' component={Apps.App7}/>
 					</Switch>
 				</div>
 			</div>
