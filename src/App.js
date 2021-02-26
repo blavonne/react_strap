@@ -7,7 +7,7 @@ class App extends Component {
 		super(props)
 		this.state = {
 			apps: [
-				{id: 1, name: "Application1", active: false},
+				{id: 1, name: "Application1", active: true},
 				{id: 2, name: "Application2", active: false},
 				{id: 3, name: "Application3", active: false},
 				{id: 4, name: "Application4", active: false},
@@ -21,8 +21,10 @@ class App extends Component {
 
 	setActive(id) {
 		const apps = this.state.apps.map(a => Object.assign({}, a));
-		const app = apps.find(app => app.id === id)
-		app.active = !app.active
+		apps.map(app => {
+			app.active = app.id === id;
+			return app
+		})
 		this.setState({apps : apps })
 		console.log('what is this', this)
 	}

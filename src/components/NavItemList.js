@@ -6,7 +6,7 @@ const NavListItem = (props) => {
 			props.apps.map(app => {
 				return (
 					<NavItem key={app.id} onClick={() => props.toggleHandler(app.id)}>
-						<NavLink href="#">
+						<NavLink href="#" className={app.active ? "active" : ""}>
 							{app.name}
 						</NavLink>
 					</NavItem>
