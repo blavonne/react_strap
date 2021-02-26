@@ -1,3 +1,6 @@
 .Content, .Navigation {
     display: inline-flex;
 }
+.Content {
+    padding: .5rem;
+}

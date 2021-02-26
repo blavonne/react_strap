@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
-import NavBar from "./components/NavBar";
-import './App.css'
+import NavBar from "./components/NavBar/NavBar";
+import './App.css';
+import {Home, About} from "./components/Content/Content";
+import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			apps: [
-				{id: 1, name: "Application1", active: true},
-				{id: 2, name: "Application2", active: false},
-				{id: 3, name: "Application3", active: false},
-				{id: 4, name: "Application4", active: false},
-				{id: 5, name: "Application5", active: false},
-				{id: 6, name: "Application6", active: false},
-				{id: 7, name: "Application7", active: false},
+				{id: 1, name: "Application1", active: true, content: "/Application1"},
+				{id: 2, name: "Application2", active: false, content: "/Application2"},
+				{id: 3, name: "Application3", active: false, content: "/Application3/"},
+				{id: 4, name: "Application4", active: false, content: "/Application4/"},
+				{id: 5, name: "Application5", active: false, content: "/Application5/"},
+				{id: 6, name: "Application6", active: false, content: "/Application6/"},
+				{id: 7, name: "Application7", active: false, content: "/Application7/"},
 			]
 		};
 		this.setActive = this.setActive.bind(this)
@@ -44,7 +46,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				{this.renderNav()}
-				<div className="Content">Content</div>
+				<div className="Content">
+					<Switch>
+						<Route exact path='/' component={Home}/>
+						<Route path='/Application2' component={About}/>
+						<Route path='/Application1' component={Home}/>
+					</Switch>
+				</div>
 			</div>
 		);
 	}
