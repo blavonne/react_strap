@@ -4,7 +4,7 @@ import './App.css'
 
 class App extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			apps: [
 				{id: 1, name: "Application1", active: false},
@@ -16,18 +16,15 @@ class App extends Component {
 				{id: 7, name: "Application7", active: false},
 			]
 		};
+		this.setActive = this.setActive.bind(this)
 	}
 
 	setActive(id) {
-		console.log('what is this', this)
-		console.log('id', id)
-		const apps = this.apps.map(a => Object.assign({}, a));
-		console.log(apps)
+		const apps = this.state.apps.map(a => Object.assign({}, a));
 		const app = apps.find(app => app.id === id)
 		app.active = !app.active
-		console.log(app)
 		this.setState({apps : apps })
-		console.log('apps', this.apps)
+		console.log('what is this', this)
 	}
 
 	renderNav() {
