@@ -1,6 +1,8 @@
-.Content, .Navigation {
+.Content, .NavBar {
     display: inline-flex;
 }
+
 .Content {
     padding: .5rem;
+    width: 70%;
 }

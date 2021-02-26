@@ -1,8 +1,12 @@
 import React from "react";
 
 const App1 = () => (
-	
-		<h1>This is App1 page!</h1>
+	<div>
+		<div>
+			<h1>This is App1 page!</h1>
+		</div>
+		<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie sem vel ligula eleifend tempor. Maecenas rutrum sodales ex ac pretium. Duis id posuere elit. Sed molestie iaculis sodales. Sed pellentesque felis id mauris aliquam, faucibus euismod augue porttitor. Nulla diam eros, tempus at erat ullamcorper, facilisis facilisis leo. Sed a nibh sed enim dignissim ultricies.</div>
+	</div>
 	
 )
 

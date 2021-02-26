@@ -16,8 +16,8 @@ class App extends Component {
 				{id: 6, name: "Application6", active: false, content: "/Application6/"},
 				{id: 7, name: "Application7", active: false, content: "/Application7/"},
 			]
-		};
-		this.setActive = this.setActive.bind(this)
+		}; //можно убрать поле content и сшивать строку в навигации средствами js
+		this.setActive = this.setActive.bind(this) //бинд нужен, чтобы работал setState
 	}
 
 	setActive(id) {
@@ -32,12 +32,10 @@ class App extends Component {
 
 	renderNav() {
 		return (
-			<div className="Navigation">
-				<NavBar
-					apps={this.state.apps}
-					onClick={this.setActive}
-				/>
-			</div>
+			<NavBar
+				apps={this.state.apps}
+				onClick={this.setActive}
+			/>
 		)
 	}
 
