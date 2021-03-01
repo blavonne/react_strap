@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchLogo from './search.svg';
+import SearchLogo from './assets/search.svg';
 import { InputGroup, Input } from 'reactstrap';
 
 const Search = ({ apps, filter }) => {
