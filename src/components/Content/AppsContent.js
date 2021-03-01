@@ -11,9 +11,9 @@ const App1 = () => (
 )
 
 const App2 = () => (
-	
+	<div>
 		<h1>This is App2 page!</h1>
-	
+	</div>
 )
 
 const App3 = () => (

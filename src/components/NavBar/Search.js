@@ -1,29 +1,30 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import SearchLogo from './search.svg';
+import { InputGroup, Input } from 'reactstrap';
 
-const Search = ({ term, apps, update }) => {
+const Search = ({ apps, filter }) => {
 	const DataSearch = e => {
-		console.log('val', e.target.value);
 		const value = e.target.value.toLowerCase();
-
-		const filter = apps.filter(app => {
+		const mask = apps.filter(app => {
 			return app.name.toLowerCase().includes(value);
 		}).map(app => app.id);
-		console.log('filter', filter);
-		update(filter);
+		filter(mask);
 	}
 
 	return (
-		<FormGroup>
+		<InputGroup className="form-control">
 			<Input
 				type="search"
 				name="search"
 				id="exampleSearch"
 				placeholder="Поиск по категориям"
 				onChange={DataSearch}
-				value={term}
+				className="inputArea"
 			/>
-		</FormGroup>
+			<div id="searchLogo">
+				<img src={SearchLogo} alt="" title="Search"/>
+			</div>
+		</InputGroup>
 	)
 }
 

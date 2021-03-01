@@ -6,7 +6,7 @@ import Search from "./Search";
 const NavBar = (props) => {
 	return (
 		<div className="NavBar">
-			<Search apps={props.apps} update={props.update}/>
+			<Search apps={props.apps} filter={props.filter}/>
 			<Nav pills vertical>
 				<NavItemList apps={props.apps} toggleHandler={props.onClick}/>
 			</Nav>

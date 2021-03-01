@@ -34,7 +34,6 @@ class App extends Component {
 			return app
 		})
 		this.setState({apps : apps })
-		console.log('what is this', this)
 	}
 
 	renderNav() {
@@ -42,7 +41,7 @@ class App extends Component {
 			<NavBar
 				apps={this.state.apps}
 				onClick={this.setActive}
-				update={this.filterList}
+				filter={this.filterList}
 			/>
 		);
 	};
@@ -79,6 +78,6 @@ class App extends Component {
 
 export default App;
 
-App.PropTypes = {
+App.propTypes = {
 	id: PropTypes.array
 }
