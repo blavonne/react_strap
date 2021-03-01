@@ -8,7 +8,7 @@ const Search = ({ term, apps, update }) => {
 
 		const filter = apps.filter(app => {
 			return app.name.toLowerCase().includes(value);
-		});
+		}).map(app => app.id);
 		console.log('filter', filter);
 		update(filter);
 	}

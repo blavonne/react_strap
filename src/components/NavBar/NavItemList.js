@@ -5,13 +5,14 @@ import { NavLink as RRNavLink } from 'react-router-dom';
 const NavListItem = (props) => {
 	return (
 			props.apps.map(app => {
-				return (
-					<NavItem key={app.id} onClick={() => props.toggleHandler(app.id)}>
-						<NavLink tag={RRNavLink} to={app.content} className={app.active ? "active" : ""}>
-							{app.name}
-						</NavLink>
-					</NavItem>
-				)
+				if (app.display)
+					return (
+						<NavItem key={app.id} onClick={() => props.toggleHandler(app.id)}>
+							<NavLink tag={RRNavLink} to={app.content} className={app.active ? "active" : ""}>
+								{app.name}
+							</NavLink>
+						</NavItem>
+					)
 			})
 	);
 }

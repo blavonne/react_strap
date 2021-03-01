@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import NavBar from "./components/NavBar/NavBar";
 import './App.css';
+import {Col, Row} from 'reactstrap';
 import Router from "./components/Router/Router";
-import { Row, Col } from 'reactstrap';
+import PropTypes from "prop-types";
 
 //можно убрать поле content и сшивать строку в навигации средствами js
 const initialApps = [
-	{id: 1, name: "Application1", active: false, content: "/Application1/"},
-	{id: 2, name: "Application2", active: false, content: "/Application2/"},
-	{id: 3, name: "Application3", active: false, content: "/Application3/"},
-	{id: 4, name: "Application4", active: false, content: "/Application4/"},
-	{id: 5, name: "Application5", active: false, content: "/Application5/"},
-	{id: 6, name: "Application6", active: false, content: "/Application6/"},
-	{id: 7, name: "Application7", active: false, content: "/Application7/"}
+	{id: 1, name: "Экономика", active: false, content: "/Application1/", display: true},
+	{id: 2, name: "Политика", active: false, content: "/Application2/", display: true},
+	{id: 3, name: "Слоники", active: false, content: "/Application3/", display: true},
+	{id: 4, name: "Сложная математика", active: false, content: "/Application4/", display: true},
+	{id: 5, name: "Соленые чипсы", active: false, content: "/Application5/", display: true},
+	{id: 6, name: "Кока-кола", active: false, content: "/Application6/", display: true},
+	{id: 7, name: "Макет", active: false, content: "/Application7/", display: true}
 ];
 
 
@@ -23,7 +24,7 @@ class App extends Component {
 			apps: initialApps
 		};
 		this.setActive = this.setActive.bind(this); //бинд нужен, чтобы работал setState
-		this.filterList = this.filterList.bind(this);
+		this.filterList = this.filterList.bind(this); //фильтрация меню через поисковую строку
 	}
 
 	setActive(id) {
@@ -43,18 +44,24 @@ class App extends Component {
 				onClick={this.setActive}
 				update={this.filterList}
 			/>
-		)
-	}
+		);
+	};
 
 	renderContent() {
 		return (
 			<Router/>
 		)
-	}
+	};
 
-	filterList(apps) {
-		this.setState({apps: apps});
-	}
+	filterList(id) {
+		this.setState(function (state) {
+			return (
+				state.apps.map(app => {
+					app.display = id.includes(app.id);
+				})
+			);
+		});
+	};
 
 	render() {
 		return (
@@ -71,3 +78,7 @@ class App extends Component {
 }
 
 export default App;
+
+App.PropTypes = {
+	id: PropTypes.array
+}
