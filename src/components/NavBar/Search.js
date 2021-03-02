@@ -19,7 +19,7 @@ const Search = ({ apps, filter }) => {
 				id="exampleSearch"
 				placeholder="Поиск по категориям"
 				onChange={DataSearch}
-				className="inputArea"
+				className="searchArea"
 			/>
 			<div id="searchLogo">
 				<img src={SearchLogo} alt="" title="Search"/>

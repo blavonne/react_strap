@@ -15,7 +15,7 @@ import PropTypes from "prop-types";
 
 const Router = (apps) => {
 	return (
-		<div className="Content">
+		<div className="ContentArea">
 			<Switch>
 				<Route exact path='/' component={Apps.Index}/>
 				<Route exact path='/:name' render={(props) => <App1 apps={apps} {...props}/>} />

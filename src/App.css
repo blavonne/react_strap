@@ -1,9 +1,4 @@
-.Content {
-    padding: .5rem;
-    width: 70%;
-}
-
-.inputArea {
+.searchArea {
     border: none !important;
 }
 
@@ -16,4 +11,19 @@
 
 .NavBar {
     padding: 2px;
+    flex: 1 5 20%;
+}
+
+.ContentArea {
+    padding: .5rem;
+    flex: 1 1 80%;
+}
+
+.AppInfo {
+    width: 80%;
+}
+
+.App {
+    display: flex;
+    flex-flow: row wrap; /* то же самое, что флекс-врап и флекс-дайрекшн */
 }

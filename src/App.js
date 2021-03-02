@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import NavBar from "./components/NavBar/NavBar";
 import './App.css';
-import {Col, Row} from 'reactstrap';
 import Router from "./components/Router/Router";
 
-//можно убрать поле content и сшивать строку в навигации средствами js
 const initialApps = [
 	{id: 1, name: "Экономика", active: false, display: true},
 	{id: 2, name: "Политика", active: false, display: true},
@@ -62,14 +60,10 @@ class App extends Component {
 
 	render() {
 		return (
-			<Row>
-				<Col xs="auto" sm="auto" md="auto" lg="auto">
-					{this.renderNav()}
-				</Col>
-				<Col>
-					{this.renderContent()}
-				</Col>
-			</Row>
+			<div className="App">
+				{this.renderNav()}
+				{this.renderContent()}
+			</div>
 		);
 	}
 }
