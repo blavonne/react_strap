@@ -8,7 +8,7 @@ const NavListItem = (props) => {
 				if (app.display)
 					return (
 						<NavItem key={app.id} onClick={() => props.toggleHandler(app.id)}>
-							<NavLink tag={RRNavLink} to={app.content} className={app.active ? "active" : ""}>
+							<NavLink tag={RRNavLink} to={app.name} className={app.active ? "active" : ""}>
 								{app.name}
 							</NavLink>
 						</NavItem>

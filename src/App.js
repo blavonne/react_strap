@@ -3,19 +3,17 @@ import NavBar from "./components/NavBar/NavBar";
 import './App.css';
 import {Col, Row} from 'reactstrap';
 import Router from "./components/Router/Router";
-import PropTypes from "prop-types";
 
 //можно убрать поле content и сшивать строку в навигации средствами js
 const initialApps = [
-	{id: 1, name: "Экономика", active: false, content: "/Application1/", display: true},
-	{id: 2, name: "Политика", active: false, content: "/Application2/", display: true},
-	{id: 3, name: "Слоники", active: false, content: "/Application3/", display: true},
-	{id: 4, name: "Сложная математика", active: false, content: "/Application4/", display: true},
-	{id: 5, name: "Соленые чипсы", active: false, content: "/Application5/", display: true},
-	{id: 6, name: "Кока-кола", active: false, content: "/Application6/", display: true},
-	{id: 7, name: "Макет", active: false, content: "/Application7/", display: true}
+	{id: 1, name: "Экономика", active: false, display: true},
+	{id: 2, name: "Политика", active: false, display: true},
+	{id: 3, name: "Слоники", active: false, display: true},
+	{id: 4, name: "Сложная математика", active: false, display: true},
+	{id: 5, name: "Соленые чипсы", active: false, display: true},
+	{id: 6, name: "Кока-кола", active: false, display: true},
+	{id: 7, name: "Макет", active: false, display: true}
 ];
-
 
 class App extends Component {
 	constructor(props) {
