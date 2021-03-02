@@ -33,7 +33,7 @@ class App extends Component {
 			app.active = app.id === id;
 			return app
 		})
-		this.setState({apps : apps })
+		this.setState({ apps : apps })
 	}
 
 	renderNav() {
@@ -48,7 +48,7 @@ class App extends Component {
 
 	renderContent() {
 		return (
-			<Router/>
+			<Router apps={this.state.apps}/>
 		)
 	};
 
@@ -77,7 +77,3 @@ class App extends Component {
 }
 
 export default App;
-
-App.propTypes = {
-	id: PropTypes.array
-}

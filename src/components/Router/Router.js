@@ -1,6 +1,13 @@
 import React from "react";
 import {Route, Switch} from "react-router-dom";
 import * as Apps from "../Content/AppsContent";
+import App2 from "../Content/AppsContent"
+
+/*
+<Route path={"/department/:departmentid"} component={DepartmentIndex} />\
+departmentid придёт в DepartmentIndex
+ */
+
 
 const Router = () => {
 	return (
@@ -18,5 +25,30 @@ const Router = () => {
 		</div>
 	)
 }
+
+// const RouteList = (apps) => {
+// 	console.log('RouteList', apps)
+// 	console.log('RouteList', typeof apps)
+// 	return (
+// 		<Switch>
+// 			<Route exact path='/' component={Apps.Index}/>
+// 			{apps.apps.map((app, index) => {
+// 				return (
+// 					<Route path={app.name} render={() => <App2 name={app.name}/>} key={index}/>
+// 				)
+// 			})}
+// 		</Switch>
+// 	)
+// }
+//
+// const Router = (apps) => {
+// 	console.log('Router', apps)
+// 	console.log('Router', typeof apps)
+// 	return (
+// 		<div className="Content">
+// 			<RouteList apps={apps}/>
+// 		</div>
+// 	)
+// }
 
 export default Router;

@@ -1,5 +1,9 @@
 import React from "react";
 
+/*
+примет от Route id и исходя из id будет формировать контент
+ */
+
 const App1 = () => (
 	<div>
 		<div>
@@ -10,9 +14,9 @@ const App1 = () => (
 	
 )
 
-const App2 = () => (
+const App2 = ({name}) => (
 	<div>
-		<h1>This is App2 page!</h1>
+		<h1>This is {name} page!</h1>
 	</div>
 )
 
