@@ -21,6 +21,7 @@ class App extends Component {
 		};
 		this.setActive = this.setActive.bind(this); //бинд нужен, чтобы работал setState
 		this.filterList = this.filterList.bind(this); //фильтрация меню через поисковую строку
+		this.resetActive = this.resetActive.bind(this);//чтобы активное выделение сбросилось, если попадём на стр, кот не сущесвует
 	}
 
 	setActive(id) {
@@ -30,6 +31,21 @@ class App extends Component {
 			return app
 		})
 		this.setState({ apps : apps })
+	}
+
+	// resetActive() {
+	// 	const apps = this.state.apps.map(a => Object.assign({}, a));
+	// 	apps.map(app => {
+	// 		app.active = false;
+	// 		return app
+	// 	})
+	// 	this.setState({apps : apps})
+	// }
+
+	resetActive() {
+		console.log("QWERTY")
+		console.log(this.state)
+		this.setActive(-1)
 	}
 
 	renderNav() {
@@ -44,7 +60,9 @@ class App extends Component {
 
 	renderContent() {
 		return (
-			<Router apps={this.state.apps}/>
+			<div className="ContentArea">
+				<Router apps={this.state.apps} resetActive={this.resetActive}/>
+			</div>
 		)
 	};
 

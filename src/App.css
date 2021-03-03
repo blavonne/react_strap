@@ -27,3 +27,7 @@
     display: flex;
     flex-flow: row wrap; /* то же самое, что флекс-врап и флекс-дайрекшн */
 }
+
+.ErrorPage {
+    text-align: center;
+}

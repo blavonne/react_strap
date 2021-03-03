@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Redirect} from "react-router-dom";
 
 /*
 примет от Route id и исходя из id будет формировать контент
@@ -8,13 +9,14 @@ import PropTypes from "prop-types";
 function App1 (props) {
 	console.log('App1', props)
 	let application
-	props.apps.apps.map(app => {
+	props.apps.map(app => {
 		if (app.name === props.match.params.name) {
 			return application = app
 		}
 	})
-	if (application === undefined)
-		return null
+	if (application === undefined) {
+		return <Redirect to="/404"/>
+	}
 	return (
 		<div className="AppInfo">
 			<div>
@@ -39,5 +41,5 @@ const Index = () => (
 export {App1, Index};
 
 App1.propTypes = {
-	apps : PropTypes.object
+	apps : PropTypes.array
 }
