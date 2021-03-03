@@ -45,7 +45,7 @@ class Application extends React.Component {
 
 	render() {
 		if (this.state.isLoading)
-			return <Spinner color="primary" />
+			return <Spinner color="primary">{''}</Spinner>
 		this.application = this.setApplication()
 		if (this.application === null)
 			return <Redirect to="/404"/>
