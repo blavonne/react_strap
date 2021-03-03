@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Redirect} from "react-router-dom";
+import { Spinner } from 'reactstrap';
 
 /*
 примет от Route id и исходя из id будет формировать контент
@@ -17,7 +18,8 @@ class Application extends React.Component {
 		super(props);
 		this.application = null;
 		this.state = {
-			show: true
+			show: true,
+			isLoading: true
 		}
 	}
 
@@ -31,6 +33,10 @@ class Application extends React.Component {
 		return match
 	}
 
+	componentDidMount() {
+		setTimeout(() => this.setState({ isLoading: false }), 2000); // имитация асинхронного вызова
+	}
+
 	componentDidUpdate(prevProps) {
 		if (prevProps.match.params.name !== this.props.match.params.name) {
 			this.setState({show : false})
@@ -38,6 +44,8 @@ class Application extends React.Component {
 	}
 
 	render() {
+		if (this.state.isLoading)
+			return <Spinner color="primary" />
 		this.application = this.setApplication()
 		if (this.application === null)
 			return <Redirect to="/404"/>
