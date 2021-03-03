@@ -33,18 +33,7 @@ class App extends Component {
 		this.setState({ apps : apps })
 	}
 
-	// resetActive() {
-	// 	const apps = this.state.apps.map(a => Object.assign({}, a));
-	// 	apps.map(app => {
-	// 		app.active = false;
-	// 		return app
-	// 	})
-	// 	this.setState({apps : apps})
-	// }
-
 	resetActive() {
-		console.log("QWERTY")
-		console.log(this.state)
 		this.setActive(-1)
 	}
 
@@ -70,7 +59,7 @@ class App extends Component {
 		this.setState(function (state) {
 			return (
 				state.apps.map(app => {
-					app.display = id.includes(app.id);
+					return app.display = id.includes(app.id);
 				})
 			);
 		});

@@ -7,7 +7,6 @@ import {Redirect} from "react-router-dom";
  */
 
 function App1 (props) {
-	console.log('App1', props)
 	let application
 	props.apps.map(app => {
 		if (app.name === props.match.params.name) {

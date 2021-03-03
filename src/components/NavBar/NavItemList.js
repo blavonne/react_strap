@@ -13,6 +13,8 @@ const NavListItem = (props) => {
 							</NavLink>
 						</NavItem>
 					)
+				else
+					return null
 			})
 	);
 }
