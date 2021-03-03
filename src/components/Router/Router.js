@@ -1,7 +1,7 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import * as Apps from "../Content/AppsContent";
-import {App1} from "../Content/AppsContent"
+import {Application} from "../Content/AppsContent"
 import PropTypes from "prop-types";
 import ErrorPage from "../ErrorHandler/ErrorPage";
 
@@ -18,7 +18,8 @@ const Router = ({apps, resetActive}) => {
 			<Switch>
 				<Route exact path='/' component={Apps.Index}/>
 				<Route exact path="/404" render={() => <ErrorPage errorMessage="Страницы не существует" resetActive={resetActive} />} />
-				<Route exact path='/:name' render={(props) => <App1 apps={apps} {...props}/>} />
+				<Route exact path='/:name' render={(props) => <Application apps={apps} {...props}/>} />
+				<Route render={() => <Redirect to="/404"/>} />
 			</Switch>
 	)
 }

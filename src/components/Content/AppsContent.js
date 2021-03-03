@@ -6,16 +6,22 @@ import {Redirect} from "react-router-dom";
 примет от Route id и исходя из id будет формировать контент
  */
 
-function App1 (props) {
-	let application
-	props.apps.map(app => {
-		if (app.name === props.match.params.name) {
-			return application = app
-		}
-	})
-	if (application === undefined) {
-		return <Redirect to="/404"/>
+function Application (props) {
+	console.log('Application', props)
+	let application = null
+
+	function checkInput() {
+		props.apps.map(app => {
+			if (app.name === props.match.params.name) {
+				return application = app
+			}
+		})
+		return application !== null;
 	}
+
+	if (!checkInput())
+		return <Redirect to="/404"/>
+
 	return (
 		<div className="AppInfo">
 			<div>
@@ -32,13 +38,11 @@ function App1 (props) {
 }
 
 const Index = () => (
-
 	<h1>This is default page!</h1>
-
 )
 
-export {App1, Index};
+export {Application, Index};
 
-App1.propTypes = {
+Application.propTypes = {
 	apps : PropTypes.array
 }
