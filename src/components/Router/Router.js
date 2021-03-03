@@ -1,7 +1,7 @@
 import React from "react";
 import {Redirect, Route, Switch} from "react-router-dom";
-import * as Apps from "../Content/AppsContent";
-import {Application} from "../Content/AppsContent"
+import * as Apps from "../Content/Application";
+import {Application} from "../Content/Application"
 import PropTypes from "prop-types";
 import ErrorPage from "../ErrorHandler/ErrorPage";
 
