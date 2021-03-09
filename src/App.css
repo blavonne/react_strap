@@ -1,22 +1,23 @@
 .searchArea {
     border: none !important;
+    overflow: hidden;
 }
 
-#searchLogo {
-    width: fit-content;
-    height: fit-content;
-    margin-left: 1px;
-    background-color: rgba(255, 255, 255, 0);
+.Search {
+    height: fit-content !important;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
 }
 
 .NavBar {
     padding: 2px;
-    flex: 1 5 20%;
+    flex: 1 5 15%;
 }
 
 .ContentArea {
     padding: .5rem;
-    flex: 1 1 80%;
+    flex: 15 1 80%;
 }
 
 .AppInfo {

@@ -12,7 +12,7 @@ const Search = ({ apps, filter }) => {
 	}
 
 	return (
-		<InputGroup className="form-control">
+		<InputGroup className="form-control Search">
 			<Input
 				type="search"
 				name="search"
@@ -21,9 +21,7 @@ const Search = ({ apps, filter }) => {
 				onChange={DataSearch}
 				className="searchArea"
 			/>
-			<div id="searchLogo">
 				<img src={SearchLogo} alt="" title="Search"/>
-			</div>
 		</InputGroup>
 	)
 }
